@@ -1,14 +1,13 @@
-const currentUser = Phoebe; 
 function getHeavyTampon() {
     /*const heavytampon = document.querySelector("#input-heavy-tampons").value;
     console.log(heavytampon);*/
     localStorage.setItem(Phoebe.heavyTampon, document.querySelector("#input-heavy-tampons").value);
 }
-function hasProduct(productType)
+function match(productType)
 {
-    
+    for 
 }
-
+users={phoebe,rebecca,chelsea, eliza, angelica}
 let phoebe = {
     password: "Polar_seltzer",
     donor: true,
