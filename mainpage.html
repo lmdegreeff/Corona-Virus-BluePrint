@@ -16,24 +16,7 @@
         <a class="link" onclick= storeTampon() onclick= getLocation() href="messaging.html"> I need a tampon</a>
         <a class="link" onclick= storePad() onclick= getLocation() href="messaging.html"> I need a pad </a> 
         
-        <script>
-            var x = document.getElementById("demo");
-            
-            function getLocation() {
-              if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-              } else { 
-                x.innerHTML = "Geolocation is not supported by this browser.";
-              }
-            }
-            
-            function showPosition(position) {
-              x.innerHTML = "Latitude: " + position.coords.latitude + 
-              "<br>Longitude: " + position.coords.longitude;
-            
-            
-            
-            }
+        <script src="messaging.js">
             </script>
   </body>
 
