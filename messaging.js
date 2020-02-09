@@ -5,18 +5,33 @@ function getHeavyTampon() {
 }
 function match(productType)
 {
-    for 
+    var availableList={}
+    var currentNeed=localStorage.get('need');
+    for (user in users)
+    {
+        if(currentNeed.equals('tampon'))
+        {
+            if(user.tampons==true)
+            {
+                availableList.push(user);
+
+            }
+        }
+        else if (currentNeed.equals('pad'))
+        {
+            if(user.pads==true)
+            {
+                availableList.push(user);
+            }
+        }
+    return availableList; 
 }
-users={phoebe,rebecca,chelsea, eliza, angelica}
+var users={phoebe,rebecca,chelsea, eliza, angelica}
 let phoebe = {
     password: "Polar_seltzer",
     donor: true,
-    heavyTampons: true,
-    regularTampons: false,
-    lightTampons: true,
-    heavyPad: true,
-    regularPad: false,
-    lightPad: false,
+    tampons=true,
+    pads=false, 
     latitude: "32",
     longitude: "32"
 };
@@ -55,6 +70,4 @@ let angelica = {
     latitude: "32",
     longitude: "32"
 };
-
-
-
+}
