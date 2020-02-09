@@ -1,11 +1,44 @@
 
+html {
+  background-color:rgb(44, 43, 49)
+}
 .bodyText {
   font-family:helvetica, sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
   padding: 20px;
-};
-.title {
-  text-align:center;
-};
+}
+
+.image {
+  background-image: url("moon.png");
+  width:720px;
+  height: 200px;
+}
+
+.title { 
+  font-size: 40px; 
+  letter-spacing:10px;
+  color: rgb(231, 231, 243);
+}
+
+.subtitle {
+  font-size: 30px;
+  color: rgb(247, 244, 255);
+
+}
+
+.link {
+  font-family:helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items:center; 
+  padding: 20px;
+  margin: 30px;
+  cursor: pointer;
+  color: rgb(240, 245, 240);
+  background-color: rgb(105, 112, 131);
+  padding:20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,1);
+}
