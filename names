@@ -1,0 +1,169 @@
+//for longitude to be practical, need two decimal places
+
+let phoebe = {
+    password: "Polar_seltzer",
+    heavyTampons: true,
+    regularTampons: false,
+    lightTampons: true,
+    heavyPad: true,
+    regularPad: false,
+    lightPad: false,
+    latitude: "32.00",
+    longitude: "32.00"
+};
+
+let emily = {
+    password: "photo",
+    heavyTampons: false,
+    regularTampons: false,
+    lightTampons: true,
+    heavyPad: false,
+    regularPad: true,
+    lightPad: false,
+    latitude: "62.00",
+    longitude: "-22.00"
+}
+let emma = {
+    password: "people",
+    heavyTampons: false,
+    regularTampons: false,
+    lightTampons: true,
+    heavyPad: false,
+    regularPad: false,
+    lightPad: false,
+    latitude: "34.00",
+    longitude: "57.00"
+}
+let tali= {
+    password: "foundation",
+    heavyTampons: false,
+    regularTampons: true,
+    lightTampons: true,
+    heavyPad: false,
+    regularPad: false,
+    lightPad: true,
+    latitude: "89.00",
+    longitude: "20.00"
+}
+let natalie= {
+    password: "grocery",
+    heavyTampons: false,
+    regularTampons: true,
+    lightTampons: false,
+    heavyPad: false,
+    regularPad: false,
+    lightPad: true,
+    latitude: "-23.00",
+    longitude: "45.00"
+}
+let victoria= {
+    password: "disk",
+    heavyTampons: false,
+    regularTampons: false,
+    lightTampons: false,
+    heavyPad: true,
+    regularPad: true,
+    lightPad: false,
+    latitude: "-34.00",
+    longitude: "-12.00"
+}
+let tom = {
+    password: "poetry",
+    heavyTampons: false,
+    regularTampons: false,
+    lightTampons: false,
+    heavyPad: true,
+    regularPad: true,
+    lightPad: true,
+    latitude: "09.00",
+    longitude: "-12.00"
+}
+let ellie= {
+    password: "writing",
+    heavyTampons: false,
+    regularTampons: true,
+    lightTampons: true,
+    heavyPad: true,
+    regularPad: true,
+    lightPad: false,
+    latitude: "-34.00",
+    longitude: "23.00"
+}
+let tammy= {
+    password: "debt",
+    heavyTampons: false,
+    regularTampons: false,
+    lightTampons: true,
+    heavyPad: true,
+    regularPad: false,
+    lightPad: false,
+    latitude: "63.00",
+    longitude: "-39.00"
+}
+let tillie= {
+    password: "",
+    heavyTampons: true,
+    regularTampons: true,
+    lightTampons: true,
+    heavyPad: false,
+    regularPad: false,
+    lightPad: true,
+    latitude: "-24.00",
+    longitude: "-92.00"
+}
+let shannon= {
+    password: "dad",
+    heavyTampons: false,
+    regularTampons: true,
+    lightTampons: false,
+    heavyPad: false,
+    regularPad: false,
+    lightPad: true,
+    latitude: "-45.00",
+    longitude: "94.00"
+}
+let matilda= {
+    password: "attention",
+    heavyTampons: false,
+    regularTampons: true,
+    lightTampons: true,
+    heavyPad: false,
+    regularPad: true,
+    lightPad: false,
+    latitude: "-94.00",
+    longitude: "-27.00"
+}
+let james= {
+    password: "robert",
+    heavyTampons: true,
+    regularTampons: true,
+    lightTampons: false,
+    heavyPad: false,
+    regularPad: true,
+    lightPad: false,
+    latitude: "-27.00",
+    longitude: "-43.00"
+}
+let toby= {
+    password: "health",
+    heavyTampons: true,
+    regularTampons: false,
+    lightTampons: true,
+    heavyPad: false,
+    regularPad: false,
+    lightPad: false,
+    latitude: "93.00",
+    longitude: "48.00"
+}
+let angelica= {
+    password: "reccomendation",
+    heavyTampons: true,
+    regularTampons: false,
+    lightTampons: true,
+    heavyPad: true,
+    regularPad: false,
+    lightPad: false,
+    latitude: "-36.00",
+    longitude: "67.00"
+}
+
