@@ -5,7 +5,7 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="593179505187-cnpdbbtldne5879r5ptjp1dh3k446qk4.apps.googleusercontent.com">
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
-<a href="#" onclick="onSignIn();">Sign in</a>
+  <a href="#" onclick="onSignIn();">Sign in</a>
 <script>
   function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
@@ -13,6 +13,15 @@
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+  var id_token = googleUser.getAuthResponse().id_token;
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://yourbackend.example.com/tokensignin');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+  console.log('Signed in as: ' + xhr.responseText);
+};
+xhr.send('idtoken=' + id_token);
 }
 </script>
 <a href="#" onclick="signOut();">Sign out</a>
