@@ -48,6 +48,11 @@ html {
   margin: 20px;
 }
 .help {
-  margin: 10px; 
-  font-size: 15px; 
+  font-family:helvetica, sans-serif;
+  display: flex;
+  font-size: 30px; 
+  flex-direction: column;
+  align-items: center;
+  color: white; 
+  padding: 20px;
 }
