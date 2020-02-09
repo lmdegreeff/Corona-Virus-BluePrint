@@ -1,6 +1,7 @@
 var currentNeed;
 var x;
 var y = 1;
+var i; 
 
 function storeTampon() {
 localStorage.setItem('need', 'tampon');
@@ -26,6 +27,8 @@ function showPosition(position) {
   }
 function match()
 {
+    lat=localStorage.getItem('latitude');
+    long=localStorage.getItem('longitude');
     var availableList=[];
     var currentNeed = localStorage.getItem('need'); 
     console.log(localStorage.getItem('need'));
@@ -37,17 +40,14 @@ function match()
         {
             if(user.tampons==true)
             {
-                availableList.push(user.name);
+                availableList.push([user.name,user.number,Math.trunc(Math.sqrt((Math.abs(user.latitude - lat)^2) + (user.longitude - long)^2)*69)+" miles away"]);
             }
         }
         if (currentNeed===('pad'))
         {
             if(user.pads==true)
             {
-                /*console.log("success");
-                console.log("${user}");*/
-                availableList.push(user.name);
-                
+                availableList.push([user.name,user.number,Math.trunc(Math.sqrt((Math.abs(user.latitude - lat)^2) + (user.longitude - long)^2)*69)+" miles away"]);
             }
         }
         console.log(availableList);
@@ -55,55 +55,53 @@ function match()
 }
 return availableList; 
 };
-
-/*function sortList(availableList)
+/*
+function sortList(availableList)
 {
     lat=localStorage.getItem('latitude');
-    console.log(lat); 
     long=localStorage.getItem('longitude');
-    console.log(long);
     var newList=[];
     for (var user of availableList)
     {
-        dist=Math.sqrt((user.latitude - lat)^2 + (user.longitude - long)^2)
-        if (dist<=0.01)
-        {
-            newList.push[user,dist];
-        }
-        newList.push([user,dist]);
-    }
-    for (var user of newList)
-    {
-        console.log(user[1]);
-    }
-        const len = newList.length;
-        for (let i = 1; i < len; i++) {
-            
-          let el = newList[i];
-          let j;
-          console.log(newList[i][1]);
-      
-          for (j = i - 1; j >= 0 && newList[j][1] > el[1]; j--) {
-            console.log(newList[j][1]);
-            newList[j + 1] = newList[j];
-          }
-          newList[j + 1] = el;
-        }
-        console.log(newList);
-        return newList;
-      };*/
+        dist=Math.random();
+        /*Math.sqrt((Math.abs(user.latitude - lat)^2) + (user.longitude - long)^2);
+        console.log(dist);
 
+            console.log("ERROR");
+            console.log(dist);
+            console.log(user.latitude);
+            console.log(user.longitude);
+            console.log(lat);
+            console.log(long);
+        newList.push([user.name,user.number,dist]);
+    }
+    console.log(newList);
+     
+  for (let i = 1; i < newList.length; i++) {
+    let j = i - 1;
+    let tmp = newList[i][2];
+    while (j >= 0 && newList[2] > tmp) {
+      newList[j + 1] = newList[j];
+      j--;
+    }
+    newList[j+1] = tmp;
+  }
+  return newList;
+}
+*/ 
 function print(availableList) {
     y = 1; 
-    document.getElementById('1').innerHTML = "hi.";
-    for (var user of availableList) {
-        document.getElementById(y).innerHTML = user;
+    document.getElementById('1').innerHTML = "Couldn't find anyone, sorry.      :(";
+        for (i = 0; i < availableList.length; i++) {
+           console.log(i);
+           document.getElementById(y).innerHTML = availableList[i][0] + " | " + availableList[i][1] + " | Distance: " + availableList[i][2];
         y++;
     }
 }
 
 var phoebe = {
     name: "Phoebe",
+    number: "202-555-0193",
     password: "Polar_seltzer",
     tampons: true,
     pads:false,
@@ -112,6 +110,7 @@ var phoebe = {
 };
 var emily = {
     name: "Emily",
+    number: "202-555-0161",
     password: "photo",
     tampons: false,
     pads: false,
@@ -120,6 +119,7 @@ var emily = {
 };
 var emma = {
     name: "Emma", 
+    number: "202-555-0150",
     password: "people",
     tampons: false,
     pads: false,
@@ -128,6 +128,7 @@ var emma = {
 };
 var tali= {
     name: "Tali", 
+    number: "202-555-0150",
     password: "foundation",
     tampons: true, 
     pads: true,
@@ -135,7 +136,8 @@ var tali= {
     longitude: 20.00
 };
 var natalie= {
-    name: "Natalie", 
+    name: "Natalie",
+    number: "202-555-0148", 
     password: "grocery",
     tampons: false, 
     pads: true,
@@ -144,6 +146,7 @@ var natalie= {
 };
 var victoria= {
     name: "Victoria", 
+    number: "202-555-0157",
     password: "disk",
     tampons: true, 
     pads: false, 
@@ -152,6 +155,7 @@ var victoria= {
 };
 var tom = {
     name: "Tom",
+    number: "202-555-0174",
     password: "poetry",
     tampons: true, 
     pads: true,
@@ -160,6 +164,7 @@ var tom = {
 };
 var ellie= {
     name: "Ellie", 
+    number: "978-555-1413",
     password: "writing",
     tampons: true, 
     pads: true, 
@@ -168,6 +173,7 @@ var ellie= {
 };
 var tammy= {
     name: "Tammy", 
+    number: "519-555-1805",
     password: "debt",
     tampons: false, 
     pads: true, 
@@ -176,6 +182,7 @@ var tammy= {
 };
 var tillie= {
     name: "Tillie", 
+    number: "958-555-1234",
     password: "stuff",
     tampons: true, 
     pads: false, 
@@ -184,6 +191,7 @@ var tillie= {
 };
 var shannon= {
     name: "Shannon", 
+    number: "123-555-1856",
     password: "dad",
     tampons: true,
     pads: false, 
@@ -192,6 +200,7 @@ var shannon= {
 };
 var matilda= {
     name: "Matilda", 
+    number: "148-555-1372",
     password: "attention",
     tampons: false, 
     pads: false, 
@@ -200,6 +209,7 @@ var matilda= {
 };
 var james= {
     name: "James", 
+    number: "532-555-9172",
     password: "robert",
     tampons: false, 
     pads: true, 
@@ -208,6 +218,7 @@ var james= {
 };
 var toby= {
     name: "Toby",
+    number: "984-555-1928",
     password: "health",
     tampons: false, 
     pads: true, 
@@ -216,6 +227,7 @@ var toby= {
 };
 var angelica= {
     name: "Angelica", 
+    number: "134-555-1237",
     password: "reccomendation",
     tampons: true, 
     pads: true, 
