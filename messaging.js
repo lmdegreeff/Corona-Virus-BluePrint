@@ -37,6 +37,33 @@ function match(productType)
         }
     return availableList;
 }
+    function sortList(availableList)
+{
+    lat=localStorage.get('latitude');
+    long=localStorage.get('longitude');
+    var newList={};
+    for (var user in availableList)
+    {
+        dist=Math.sqrt((user.latitude - lat)^2 + (user.longitude - long)^2)
+        if (dist<=0.01)
+        {
+            newList.push(user,dist);
+        }
+    }
+        const len = newList.length;
+        for (let i = 0; i < len; i++) {
+          let el = newList[i];
+          let j;
+      
+          for (j = i - 1; j >= 0 && newList[j] > el; j--) {
+            newList[j + 1] = newList[j];
+          }
+          newList[j + 1] = el;
+        }
+        return newList;
+      };
+
+}
 var users={phoebe,rebecca,chelsea, eliza, angelica}
 let phoebe = {
     password: "Polar_seltzer",
