@@ -25,6 +25,8 @@ function getLocation() {
 }
 
 function showPosition(position) {
+  localStorage.setItem('latitude',position.coords.latitude);
+  localStorage.setItem('longitude',position.coords.longitude);
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
 
