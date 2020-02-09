@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" type="text/css" href="websitestyle.css">
+</head> 
 <body>
 
 <p>Click the button for us to get your location. Make sure to allow us to see your location.</p>
 
 <!--code for location taken from https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_geolocation -->
 
-<button onclick="getLocation()">Try It</button> 
+<button onclick="getLocation()">Try It</button>
 
 <p id="demo"></p>
 
@@ -16,13 +19,13 @@ var x = document.getElementById("demo");
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
+  } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
 
 
